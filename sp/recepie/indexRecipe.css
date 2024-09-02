@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: space-between;
+    overflow-x: none;
+}
+.navcontainer{
+    border: solid black 2px;
+    background: #667db6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    width: 100%;
+    min-height: 100px;
+    max-height: 100px;
+}
+#label{
+    font-size: 2.8rem;
+    color: white;
+}
+a{
+text-decoration: none;    
+color: white;
+}
+#navlist{
+    padding: 15px;
+    /* margin-left:  15px; 
+    margin-right: 15px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 2rem;
+}
+#navlist div{
+    display: flex;
+    gap: 30px;
+}
+.footerbox{
+    border: solid black 2px;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    color: white;
+    min-height: 40px;
+    max-height: 120px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+.contentbox{
+    padding: 5px;
+    width: 70%;
+    margin: auto;
+    /* border: solid black 2px; */
+    /* display: flex; */
+}
+.item{
+    /* border: solid black 2px; */
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    box-shadow: 3px 3px 30px blue ;
+}
+.item h2{
+    text-align: center;
+    margin: 10px;
+    font-size: 2rem;
+}
+.item img{
+    min-height: 20px;
+    max-height: 200px;
+    border-radius: 35px;
+    filter: drop-shadow(8px 3px 4px #d477e9);
+}
+
+#right2 {
+margin: 10px;
+}
+.right:hover{
+    transform: scale(1.07);
+}
+.right{
+    position: relative;
+    /* overflow: hidden; */
+    transition: all 0.4s linear 0s;
+}
+
+.right .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 35px;
+    background-color: rgba(181, 182, 182, 0.344);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.5s linear 0;
+}
+.right:hover .overlay{
+opacity: 1;
+}
+
+.right .overlay span{
+    color: white;
+    font-size: 1.2rem;
+}

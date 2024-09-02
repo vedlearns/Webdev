@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* transition check *{
+            transition-property: width;
+            transition-duration: 4s;
+            transition-delay: 0.5s;
+            transition-timing-function: linear;
+        }
+        :hover{
+            width: 1200px;
+            background-color: aqua;
+        } */
+        .container{
+            border: solid black 5px;
+            background-color: beige;
+            display:flex;
+            /* lex-direction: row-reverse; */
+            flex-wrap: wrap;
+            height: 600px;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items:stretch;
+            /* justify-content: space-between; */
+            /* align-content: flex-start; */
+        
+        }
+        .box{
+            height: 200px;
+            width: 200px;
+            border: solid black 2px;
+            margin: 2px;
+            padding: 2px;
+        }
+        #box1{
+            background-color: aqua;
+        }
+        #box2{
+            background-color: azure;
+        }
+        #box3{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">a</div>
+        <div class="box" id="box1">a</div>
+        <div class="box" id="box2">b</div>
+        <div class="box" id="box3">c</div>
+    </div>
+</body>
+</html>

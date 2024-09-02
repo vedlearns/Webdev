@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    /* border: solid black 4px; */
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    /* border: solid black 1px; */
+    height: 80%;
+    width: 30%;
+    overflow: hidden;
+    background-color: rgb(76, 156, 221);
+    box-shadow: 3px 4px 30px rgb(203, 203, 91) ;
+    border-radius: 28px;
+    gap: 10px;
+}
+.card img{
+    height: 60%;
+    margin-top: 20px;
+    border-radius: 30px;
+}
+.card p{
+    text-align: start;
+    font-weight: bold;
+    padding: 4px;
+    margin: 10px;
+    
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="im1.webp" alt="">
+            <h2>KittyPumKin</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente quod laboriosam, ut mollitia odit facilis praesentium earum error neque, necessitatibus repudiandae maiores cum voluptatum quo explicabo accusamus aut sunt quia dolorum laudantium, repellat consequuntur ipsum ipsam iure? Assumenda minus, similique asperiores rerum totam magnam commodi quos libero expedita id nemo?</p>
+        </div>
+    </div>
+</body>
+</html>

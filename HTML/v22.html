@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --primary-color:orange;
+            --custom-width:250px;
+        }
+        .container{
+            border: solid black 2px;
+            height: 650px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            
+            background-color: aqua;
+            height: 300px;
+            width: 300px;
+            border: solid black 2px;
+            margin: 5px;
+            padding: 5px;
+            overflow: scroll;
+             /* box-shadow: -20px 25px var(--primary-color);(x-axis y-axis aur color) */
+            /* box-shadow: 10px 15px 50px brown; blurness ke liye */
+            /* box-shadow: 10px 20px 15px 20px orange; (x-axis y axis blurness spread radius color)*/
+            /* box-shadow: inset 10px 15px brown; ibside shadow */
+            /* box-shadow: 10px 15px red , 15px 8px green; (multpile shadow ek saath)*/
+        }
+        img{
+            height: 200px;
+        }
+        h2{
+            text-shadow: 12px 13px 1px  white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="1.jpg" alt="">
+            <h2>Welcome to code</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio dolores temporibus, odit suscipit facilis tenetur earum delectus totam aperiam quibusdam dolorum praesentium ad provident incidunt impedit saepe, eius soluta ab natus? Sapiente adipisci accusamus error quaerat veritatis quisquam nisi? Quia tempore neque debitis alias cum aperiam consequuntur enim quasi.</p>
+        </div>
+    </div>
+</body>
+</html>
