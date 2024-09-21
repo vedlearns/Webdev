@@ -19,7 +19,7 @@ const user4={
     Age:22,
     city:"Banglore",
 }
-
+user4.city="delhi";
 console.log(user4.lName);// This is called dot Notation
 
 console.log(user4["lName"]);// This is called Bracket Notation
@@ -58,3 +58,15 @@ const user6={
 //<--To access values in Nested object-->
 console.log(user6.Address.city);
 console.log(user6.Address.Address);
+
+
+//<-To seal object -> no new property addition or deletion of a property
+// Object.seal(user6);
+// Object.seal(user6.Address); for nested objects
+
+// <--To freeze object--> complete rejection to change anything in the object , na to add/sub or modify
+Object.freeze(user6); // for normal objects
+Object.freeze(user6.Address);//for nested objects
+
+// <--syntax to delete a property-->
+delete user5.Age; 
