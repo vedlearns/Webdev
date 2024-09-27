@@ -3,7 +3,7 @@ const user ={firstName:"DEV"};// this is how you make object content in them is 
 //there can be different key and values in an object
 const user2={firstName:"ved",lName:"Singh"}// 2 diff object can have variables of the same name
 
-const Age=25;
+const Age1="Age";
 const user3={
     fName:"Edan",
     lName:"XB",
@@ -27,7 +27,7 @@ console.log(user4["lName"]);// This is called Bracket Notation
 // **is we need to access other variables outside the object it will give "undefined" (using dot notataion)
 // - when can access other variables outside object by using BRACKET NOTATAION  written in string  
 // for eg- <---using JS Variables-->
-console.log(user4["Age"]);
+console.log(user4[Age1]);           // ye Age1 value "Age" dega jo user4[] me jayega ,aur uski value dega
 // <--for JS Expressions-->
 console.log(user4["f"+"Name"]);// ye aise bhi work krta expression form me bhi
 
