@@ -28,3 +28,18 @@ while(j<alphabets.length)
 }
 console.log(alphabets);
 
+//<------------------------  V29   ------------------------------>
+//<--FOR LOOP-->
+console.log("\n for loop \n \n");
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+} 
+//<----------------------   V30   ------------------------------>
+//<---FOR DO WHILE->
+console.log("\n for Do While \n \n");
+let k=0;
+do
+{
+console.log(k);
+k++;
+}while(k<0)
