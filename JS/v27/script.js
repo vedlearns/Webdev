@@ -1,0 +1,16 @@
+let num=5;
+console.log("for num+=5 ",(num+=5));
+let num1=5;
+console.log("for num1-=5",(num1-=5));
+let num2=5;
+console.log("for num2*=5",(num2*=5));
+let num3=5;
+console.log("for num3%=5",(num3%=5));
+let num4=5;
+console.log("for num4/=5",(num4/=5));
+let num5=5;
+console.log("for num5**=5",(num5**=5));
+let num6=5;
+console.log("for Increment",++num6);
+let num7=5;
+console.log("for decrement",--num7);

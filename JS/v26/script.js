@@ -55,12 +55,3 @@ console.log(fruits5);                    //(5) ['Mango', 'Apple', 'orange', 'da
 const fruits6=fruits5.slice();              // ye new Address create krdega 
 fruits6.pop();
 console.log(fruits6, fruits5);              //(4) ['Mango', 'Apple', 'orange', 'dates'](5) ['Mango', 'Apple', 'orange', 'dates', 'grapes']
-
-//<TRYING = FOR COPYING ARRAYS>
-const fruits7=fruits5;                       //new Array create hojayega par Address Same rhega
-console.log(fruits7);                       //(5) ['Mango', 'Apple', 'orange', 'dates', 'grapes']
-fruits7.pop();
-console.log(fruits7,fruits5);               //(4) ['Mango', 'Apple', 'orange', 'dates'](4) ['Mango', 'Apple', 'orange', 'dates']
-//<--SO THIS SHOULD NOT BE USED -->
-
-
