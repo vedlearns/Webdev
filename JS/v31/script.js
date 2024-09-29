@@ -42,4 +42,19 @@ function intro3(username,designation,age)                       //passing 2 argu
 
 intro3();                   
 console.log("\n");
-intro3("Vaarid","Microsoft",23);
+intro3("Vaarid","Microsoft",23); 
+
+
+//<-------------------------------------------------------------------------       V32          ------------------------------------------------------------------------>
+
+//<---USING FUNCTIONS AND RETURN TYPES--->
+function addNumbers(a,b)
+{
+    return (a+b);
+}
+const result=addNumbers(1,2);
+console.log(result);
+
+//<--USING FUNCTIONS as Parameters of the FUNCTIONS-->
+const result2 =addNumbers(addNumbers(3,5),addNumbers(6,9));
+console.log(result2);                   // 23       // JS sb evaluate krke answer dega
