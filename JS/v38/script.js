@@ -43,3 +43,5 @@ console.log(sayHi.age);     //22
 b1(function(){        // jis function me dusra function pass kiya hai uss function ko kehte hai HIGHER ORDER FUNCTION(b1)  // jis function ko pass krte hai use kahte hai CALLBACK FUNCTION(in this case anonymous fun) ,kyunki use hote vakt vo call back hoke use hoga 
     console.log("This is an example of Anonymous Function");        //ƒ anonymous()       This is an example of Anonymous Function
 })
+
+// Function jo input leta function ya return krta hai function ko use kahte h HIGH ORDER FUNCTION
