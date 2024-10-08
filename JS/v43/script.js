@@ -4,7 +4,7 @@ function Twice(num){
 }
 
 // FUNCTION EXPRESSIONS
-const a= function num1(num){
+const a= function (num){
     return num+num;}
 //way to access 
 // console - a(5);
