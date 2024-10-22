@@ -38,4 +38,41 @@ const filteredMonths2=months.filter((month,index)=>{
 console.log(filteredMonths2);                                       // (2) ['march', 'may']
 
 
-const students=[{},]
+const students=[
+   {
+        name:"Ved",
+        age:18
+    },
+    {
+        name:"dev",
+        age:19
+    },
+    {
+        name:"Edan",
+        age:20
+    },
+    {
+        name:"vibhu",
+        age:21
+    },
+    {
+        name:"Vaarid",
+        age:22
+    },
+    {
+        name:"Xboyse",
+        age:23
+    }
+]
+
+// const adultStudents=students.filter((student)=>{
+//     return student.age>18
+// })
+// const adultStudentsname=adultStudents.map((student)=>{return student.name})
+// console.log(adultStudentsname);                   //(5) ['dev', 'Edan', 'vibhu', 'Vaarid', 'Xboyse']
+// const adultStudentsname2=adultStudentsname.filter((student)=>{return student.includes("v"||"V")})
+// console.log(adultStudentsname2);             //(2) ['dev', 'vibhu']
+
+//<------   OR u could do   -------->
+// const adultStudents=students.filter((student)=>{return student.age>18}).map((student)=>{return student.name}).filter((student)=>{return student.includes("v"||"V")})
+// console.log(adultStudents);                 //(2) ['dev', 'vibhu']
