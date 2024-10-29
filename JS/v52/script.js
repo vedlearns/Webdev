@@ -1,4 +1,4 @@
-const colors=["red","green","yellow","pink","black"];
+const colors=["red","green","yellow","pink","black","orange"];
 
 //<------------------  Array Destructuring   ------------------------>
 const [colora1,colora2,colora3]=colors[0];          // first index ke element ko array jaisa treat kr rha aur ek ek value ko store kr rha alg alg variables me 
@@ -66,5 +66,31 @@ console.log(userCity);                                  // Banglore
 
 // ARRAY JO HOTA VO BEHIND THE SCENES OBJECT JAISA WORK KRTA HAI , to hum chahe to use bhi OBJECT jaise DESTRUCTURE kr skte hai
 // to access array's 4 value(index 3)
-const {3:colors4}=colors                     // agr hm console me jaake dekhe ARRAY ko , usko expand kre to dekhenge ki usme values ek object ke form me store hui h in front of indexes , so un indexes ko use krke hum ARRAY me DESTRUCTURING kr skte hai Object jaise
+const {3:colors4,5:colors5}=colors                     // agr hm console me jaake dekhe ARRAY ko , usko expand kre to dekhenge ki usme values ek object ke form me store hui h in front of indexes , so un indexes ko use krke hum ARRAY me DESTRUCTURING kr skte hai Object jaise
 console.log(colors4);                       // pink
+console.log(colors5);                       // orange
+
+
+// DESTRUCTURING in a Function
+
+//Object
+function intro({name,age,address:{city:userCity}})
+{
+    console.log(name,age,userCity);
+}
+intro(user);               // anurag 25 Banglore
+
+//Array
+function printcolors([a,b,,d])
+{
+    console.log(a,b,d);
+}
+printcolors(colors);        // red green pink
+
+
+// agr seedha particular index wala chaiye 
+function printcolors2({5:color6})
+{
+    console.log(color6);
+}
+printcolors2(colors)                    // orange
