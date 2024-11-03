@@ -27,5 +27,26 @@ const allIdValue=document.querySelectorAll("#paraid");
 console.log(allIdValue);                    // NodeList []   ye saare Id ko bhejdega 
 
 //<-----  isme hm ek Attribute ko bhi bhej skte h as value      ------->
-const att=document.querySelectorAll("[alt='css roadmap']")
+const att=document.querySelectorAll("[alt='css roadmap']")      // hm CSS me jaise use krte h , vaise hi use krna h Parenthesis ke andr 
 console.log(att);                           // NodeList []
+
+//<------   NESTED elements      -------->
+const li=document.querySelector("ul li")            // is se hua kya ki , jo sbse pahla ul tha use select kiya , fir jo ul ka first li tha use leliya 
+
+
+//<------   performing a work to change all images   ---->
+const imageUrl=[
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg"
+]
+document.querySelectorAll("img").forEach((element,i) => {
+    element.src=imageUrl[i];
+});
+
+
+//ek particular part me se cheeze chiaye , jaise ek UL ke andr se to hum
+document.querySelector("ul").querySelector(".para")
+
+
+// Agr zada complex h code to elements me jao , jo element chaiye uspe right click then "COPY JS PATH" select krke use as a value pass krdo querySelector me  
