@@ -16,3 +16,26 @@ console.log(firstLink.parentElement.parentElement.parentElement.children);      
 console.log(firstLink.nextElementSibling);                                         // null          //nextElementSibling Node ko skip krdega aur element sibling dega    "nextSibling" use krenge to vo ya to NODE(could be text) ya next element dega
 console.log(firstLink.parentElement.parentElement.nextElementSibling);             // <li>....</li>
 console.log(firstLink.parentElement.parentElement.previousElementSibling);         // li
+
+
+
+
+
+
+
+
+//<------------------------------------    V60 (ELEMENT VS NODE)      --------------------------------------------------------------------->
+
+// har element ek node hota hai par har node element nhi hota 
+//element HTML defined code hote hai
+// Node - HTML defined code ke sath baki sb kuch jo pure program me hai vo sb hota hai , For Eg- COMMENT , PLAIN TEXT , SCRIPT CSS TAGS , "\n" , HTML texts and elements 
+// HTML ELEMENTS ke alawa kisi cheez me hme changes chaiye to hum use Nodes ke through Access krke Changes apply kr skte hai 
+
+//<TO ACCESS>
+// there are different type of nodes(with values as 1,2,3,...)
+console.log(document.body.childNodes);                  // NodeList(18) [text, h1, text, br, text, br, text, h1, text, hr, text, p#paraid.para, text, ul, text, p, text, script]
+console.log(document.body.childNodes[2]);               // #text
+
+// Select element/Node from ELEMENTS section Then go to its PROPERTIES section , change properties and apply changes on the nodes 
+document.body.childNodes[6].nodeValue="Namaste"
+console.log(document.body.childNodes[6]);               // "Namaste"
