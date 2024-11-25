@@ -1,4 +1,3 @@
-const h1=document.querySelector("h1");
 const container=document.querySelector(".container");   
 const image=document.querySelector("img")
 
@@ -27,3 +26,19 @@ container.append(para)
 const newImage=document.createElement("img");
 newImage.src="/sp/recepie/im2.jpeg"
 container.append(newImage)
+
+
+
+// <--------------------      v63 (Removing an Element)         ------------------------->
+
+// New Method .remove()
+const h1=document.querySelector("h1");          // Selecting element to delete
+h1.remove();                                    // Element removed
+
+// Old method using   .removeChild()
+// h1.parentElement.removeChild(h1);                // Parent element select krke remove krna pdta tha 
+
+
+// Aisa krne se Actual Memory se remove nhi hota h , hum jab chaahe tb use Append kr skte hai 
+console.log(h1);                            // <h1>Document....</h1>
+// Memory se remove krne ke liye , Memory free krne ke liye set it to null
