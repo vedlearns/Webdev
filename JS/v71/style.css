@@ -52,9 +52,11 @@ img{
     align-items: center;
     overflow: hidden;
     /* visibility: hidden; */
+
 }
 .progress-value span{
     padding-left: 20px;
+    min-width: max-content;                                                    /*taki bar ke andr text distorted na rhe */
 }
 .show-error .error-label{                                                      /*Jb show error wali class hogi aur ke andr kisi element ki class me error-label hoga uspe*/
     display: block;
