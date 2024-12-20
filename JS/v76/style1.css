@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  background-color:#6399e1;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+#logo {
+  border-radius: inherit;
+  width: 8em;
+}
+#sound-image {
+  margin-top: 2em;
+  margin-right: 1em;
+  width: 2em;
+  height: 2em;
+}
+.image-bar {
+  border-radius: inherit;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffff;
+  box-shadow: 0.6em 0.5em 0.2em 0.01em   #213a58dc;
+}
+.Quiz-container {
+  border-radius: 1em;
+  width: 45vw;
+  height: 80vh;
+  padding: 5px;
+  /* background-color: pink; */
+
+}
+.index,
+.timer,
+.Next {
+  display: flex;
+  justify-content: end;
+  padding: 12px;
+  border-radius: 8px;
+  
+}
+.index p,
+.timer p {
+  background-color: rgba(29, 83, 104, 0.571);
+  width: 4em;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: poppins;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffff;
+}
+.question-bar {
+  width: 100%;
+  min-height: 3.5em;
+  border-radius: 8px;
+  background-color: #ffff;
+  box-shadow: 0.4em 0.4em 0.2em 0.2em  #213a58dc;
+}
+.question-bar p {
+  padding: 1em 1em 0.8em 0.5em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #020202;
+}
+.MCQ-container {
+    border-radius: 1em;
+  width: 100%;
+  min-height: 3.5em;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0.4em 0.4em 0.2em 0.2em  #213a58dc;
+}
+.MCQ  {
+  padding: 0.5em;
+  border: solid rgb(179, 173, 173) 2px;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95em;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Next p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #2c2c2c;
+  cursor: pointer;
+}
+.MCQ-status{
+  display: inline-flex;
+  gap: 1em;
+}
+.incorrect-image{
+  display:none;
+}
+.correct-image{
+  display: none;
+}
+.MCQ-status img{
+  width: 1.2em;
+}
+.MCQ-status.correct .correct-image{
+  display: block;
+}
+.MCQ-status.incorrect .incorrect-image{
+  display: block;
+}
