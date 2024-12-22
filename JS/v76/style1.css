@@ -21,7 +21,7 @@ body {
   border-radius: inherit;
   width: 8em;
 }
-#sound-image {
+.sound-image {
   margin-top: 2em;
   margin-right: 1em;
   width: 2em;

@@ -86,6 +86,22 @@ const q2text = document.querySelector("#q2text");
 const q3text = document.querySelector("#q3text");
 const q4text = document.querySelector("#q4text");
 
+const audio=document.querySelector("audio");
+const SoundImage=document.querySelector(".sound-image");
+SoundImage.addEventListener("click",()=>{
+  SoundImage.classList.toggle("removeSound")
+ if(SoundImage.classList.contains("removeSound"))
+ {
+  audio.muted=true;
+ SoundImage.src="./img/mute.jpg";
+ }
+ else{
+  audio.muted=false;
+  SoundImage.src="./img/soundOn.png"
+ }
+})
+
+
 o1.addEventListener("click", () => {
   if (o1.innerText == questionsContainer[a - 1][1]) {
     q1text.parentNode.classList.add("correct");
@@ -120,3 +136,4 @@ o4.addEventListener("click", () => {
         q4text.parentNode.classList.add("incorrect");
     }
 });
+
