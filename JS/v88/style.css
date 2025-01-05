@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 body {
-  --background-color:var(white);
-  --text-color:var(black);
+  --background-color:var( hsl(0, 0%, 98%));
+  --text-color:var( hsl(200, 15%, 8%));
   --elements-color:var(white);
   margin: 0;
   padding: 0;
@@ -11,17 +11,28 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
 }
+
+body.dark{
+  --background-color:hsl(207, 26%, 17%);
+  --text-color:white;
+  --elements-color:  hsl(209, 23%, 22%) ;
+}
 main {
   margin: 24px;
+}
+
+.theme:hover{
+cursor: pointer;
 }
 .title a{
   font-weight: 800;
   text-decoration: none;
-  color: black;
+  color:var(--text-color);
 }
 .header-container {
   box-shadow: 0 2px 4px 4px rgba(0, 0, 0, 0.2);
-  background-color: var(--elements-color);
+  background-color: var(--background-color);
+  color:var(--text-color);
 }
 .header-content {
   display: flex;
@@ -41,18 +52,18 @@ main {
   justify-content: space-between;
   gap: 20px;
 
-  /* background: #c9a3a3; */
 }
 .search-container {
   width: 100%;
   max-width: 350px;
   border-radius: 4px;
-  box-shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px 4px rgba(107, 105, 105, 0.2);
   padding-left: 10px;
+  
 }
 .search-container i{
   margin-inline: 4px;
-  color: #999;
+  color:var(--text-color);
 
 }
 .search-container input{
@@ -63,9 +74,11 @@ main {
   margin-left: 4px;
   overflow: hidden;
   border-radius: inherit;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 .search-container input::placeholder{
-  color: #999;
+  color:var(--text-color);
   font-family: Nunito, sans-serif;
   font-weight: 500;
 }
@@ -75,12 +88,13 @@ main {
   margin-right: 24px;
   border: none;
   outline: none;
-  box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px 4px rgba(107, 105, 105, 0.2);
   border-radius: 8px;
-  border:solid 0.01px #a1a1a1;
+  /* border:solid 0.01px #a1a1a1; */
   font-family: inherit;
   font-weight: 500;
-  color: #504f4f;
+  color: var(--text-color);
+  background-color: var(--background-color);
 }
 
 
@@ -93,7 +107,7 @@ main {
   display: inline-block;
   padding-bottom: 24px;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
   background-color: var(--elements-color);
 
 }

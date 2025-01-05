@@ -12,7 +12,8 @@ a{
   box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
+  background-color: var(--elements-color);
   cursor: pointer;
 }
 .country-details {
@@ -23,7 +24,9 @@ a{
 }
 .country-details img {
   width: 40%;
-  border: solid rgba(195, 192, 192, 0.339);
+  box-shadow: 0 2px 4px 4px rgba(107, 105, 105, 0.2);
+
+  /* border: solid rgba(195, 192, 192, 0.339); */
 }
 .details-text {
   display: flex;

@@ -62,3 +62,14 @@ console.log(e.target.value);
 const filterCountries=allCountriesData.filter((country)=> country.name.common.toLowerCase().includes(e.target.value.toLowerCase()))
 renderCountries(filterCountries)
 })
+
+const theme = document.querySelector(".theme");
+const para = document.querySelector(".header-content p");
+theme.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  para.classList.toggle("dark-mode")
+  if (para.classList.contains("dark-mode")) 
+    para.innerHTML = `<i class="fa-solid fa-sun"></i>&nbsp;&nbsp;Light Mode`;
+  else
+    para.innerHTML = `<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode`;
+});
