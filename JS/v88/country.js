@@ -14,8 +14,6 @@ const borderPara = document.querySelector(".border-countries");
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => res.json())
   .then(([country]) => {
-    console.log(country);
-    console.log(country.name.nativeName);
     flagImg.src = country.flags.svg;
     countryNameH1.innerText = country.name.common;
     nativeName.innerHTML = `<b>Native Name: </b>&nbsp;${
@@ -48,11 +46,9 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
     }`;
     if (country.borders) {
       country.borders.forEach((border) => {
-        console.log(border);
         fetch(`https://restcountries.com/v3.1/alpha/${border}`)
           .then((res) => res.json())
           .then(([borderCountryData]) => {
-            console.log(borderCountryData);
             const borderCountry = document.createElement("a");
             borderCountry.href = `country.html?name=${borderCountryData.name.common}`;
             borderCountry.innerText = borderCountryData.name.common;
@@ -67,8 +63,25 @@ const para = document.querySelector(".header-content p");
 theme.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   para.classList.toggle("dark-mode")
-  if (para.classList.contains("dark-mode")) 
-    para.innerHTML = `<i class="fa-solid fa-sun"></i>&nbsp;&nbsp;Light Mode`;
-  else
-    para.innerHTML = `<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode`;
+  themeChecker()
 });
+
+
+let themeData=localStorage.getItem("themeData")||" ";
+if(themeData!=" "){
+document.body.classList.add("dark");
+para.classList.add("dark-mode");
+}
+themeChecker()
+
+ function themeChecker(){
+  if (para.classList.contains("dark-mode")) {
+    para.innerHTML = `<i class="fa-solid fa-sun"></i>&nbsp;&nbsp;Light Mode`;
+    localStorage.setItem('themeData',"dark-mode")
+  }
+  else{
+    para.innerHTML = `<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode`;
+    localStorage.setItem('themeData'," ")
+  }
+}
+

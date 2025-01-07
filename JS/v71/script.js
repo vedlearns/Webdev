@@ -7,7 +7,8 @@ const allQuotes=[
   'Raise the bar by Completing your Goals!',
   'Well begun its half done  ',
   'Just a step away',
-  'wooohooo!! '
+  'wooohooo!! ',
+  "Good Job Budyy!, Now there's a World to Conquer!!."
 ]
 
  // Agr local storage me already exist krta hia object to vo ayega vrna predefined object
@@ -97,6 +98,7 @@ let completedGoalsCount=Object.values(allGoals).filter((goal)=>goal.completed).l
 
 progressValue.style.width=`${completedGoalsCount/inputFields.length *100}%`
 progressValue.firstElementChild.innerText=`${completedGoalsCount}/${inputFields.length} completed`
+progressLabel.innerText=allQuotes[completedGoalsCount];
 
 checkBoxList.forEach((checkbox) => {
   checkbox.addEventListener("click", (e) => {

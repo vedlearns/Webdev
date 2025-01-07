@@ -7,7 +7,6 @@ let allCountriesData
     allCountriesData=data
   });
 const searchInput=document.querySelector(".search-container input")
-console.log(searchInput);
 
 
 const filterByRegion = document.querySelector(".filter");
@@ -16,7 +15,6 @@ if(filterByRegion.value=="No Filter"){
   location.reload();
 }
 else{
-  console.log(filterByRegion.value);
   fetch(`https://restcountries.com/v3.1/region/${filterByRegion.value}`)
     .then((res) => res.json())
     .then((data) => {
@@ -58,7 +56,6 @@ function renderCountries(data) {
 }
 
 searchInput.addEventListener("input",(e)=>{
-console.log(e.target.value);
 const filterCountries=allCountriesData.filter((country)=> country.name.common.toLowerCase().includes(e.target.value.toLowerCase()))
 renderCountries(filterCountries)
 })
@@ -68,8 +65,31 @@ const para = document.querySelector(".header-content p");
 theme.addEventListener("click", () => {
   document.body.classList.toggle("dark");
   para.classList.toggle("dark-mode")
-  if (para.classList.contains("dark-mode")) 
+  if (para.classList.contains("dark-mode")){
     para.innerHTML = `<i class="fa-solid fa-sun"></i>&nbsp;&nbsp;Light Mode`;
-  else
+    themeChecker()
+  }
+  else{
     para.innerHTML = `<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode`;
+    themeChecker()
+  }
 });
+
+
+let themeData=localStorage.getItem("themeData")||" ";
+if(themeData!=" "){
+document.body.classList.add("dark");
+para.classList.add("dark-mode");
+}
+themeChecker()
+
+ function themeChecker(){
+  if (para.classList.contains("dark-mode")) {
+    para.innerHTML = `<i class="fa-solid fa-sun"></i>&nbsp;&nbsp;Light Mode`;
+    localStorage.setItem('themeData',"dark-mode")
+  }
+  else{
+    para.innerHTML = `<i class="fa-regular fa-moon"></i>&nbsp;&nbsp;Dark Mode`;
+    localStorage.setItem('themeData'," ")
+  }
+}
