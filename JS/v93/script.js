@@ -13,8 +13,19 @@ class CreateUser{
    static a= "hello";
    #b="World"
    c="YOo"
+
+   static{
+    let d="abc"
+    console.log("hello");
+    
+   }
+
+
     #getBirthYear(){
         return new Date().getFullYear() -this.#age
+    }
+    static getBirthYear1(){
+        return new Date().getFullYear() -this.age
     }
     getFullName(){
         // console.log(a);                                          //Error dega 
@@ -38,3 +49,4 @@ console.log(user1.c);                                               // YOo
 console.log(user1.getFullName());                                   // undefined world YOo  2003 vedank singh
 // console.log(CreateUser.getFullName());                           // Not a function
 // console.log(CreateUser.getFullName);                             // Undefined;
+console.log(CreateUser.getBirthYear1());                            // can be called like this
