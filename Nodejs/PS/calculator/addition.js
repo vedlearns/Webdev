@@ -7,7 +7,6 @@ req.on("end", () => {
   const fullBody = Buffer.concat(body).toString();
   const params = new URLSearchParams(fullBody);
   const bodyObject = Object.fromEntries(params);
-
   const result = Number(bodyObject.num1) + Number(bodyObject.num2);
   res.write(`<html>
         <head><title>Result</title></head>
@@ -17,8 +16,5 @@ req.on("end", () => {
   return res.end();
   }
 )
-
 }
-
-
 module.exports=addition;

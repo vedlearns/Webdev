@@ -7,6 +7,7 @@ const userRequestHandler = (req, res) => {
     <body><h1>Welcome to The Calculator<h1/>
     <a href="/calculator">Calculator</a>
     <body/> </html>`);
+    return res.end();
   } else if (req.url.toLowerCase() === "/calculator") {
     res.write(`<html>
       <head><title>Calculator</title></head>
@@ -26,8 +27,12 @@ const userRequestHandler = (req, res) => {
   ) {
       addition(req,res);
   }
-  else if(req.url==="/result"){
-
+  else{
+    res.write(`<html>
+      <head><title>PS</title></head>
+      <body><h1>404 Page not found<h1/>
+      <a href="/">Go to Home</a>
+      <body/> </html>`);
   }
 };
 module.exports = userRequestHandler;

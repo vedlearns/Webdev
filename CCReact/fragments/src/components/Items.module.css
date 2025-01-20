@@ -1,3 +1,11 @@
-.item{
-  background-color: orange;
+.item {
+  margin-inline: auto;
+  margin-block: 0.8rem;
+}
+.button {
+  float: right;
+  background-color: rgb(62, 153, 232);
+  border-radius:5px ;
+  color: white;
+  border: solid #b6b3b3 1px;
 }
