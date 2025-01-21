@@ -1,7 +1,7 @@
 import styles from "./FoodInput.module.css"
-const FoodInput=({handleOnChange})=>{
+const FoodInput=({handleOnKeyDown})=>{
 return<>
-<input onChange={handleOnChange} className={styles.foodInput} placeholder="Enter Food Item"  type="text" /> 
+<input onKeyDown={handleOnKeyDown} className={styles.foodInput} placeholder="Enter Food Item"  type="text" />
 </>
 }
 export default FoodInput;
