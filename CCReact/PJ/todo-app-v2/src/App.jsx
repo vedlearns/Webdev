@@ -1,37 +1,34 @@
+import { useState } from "react";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
 import AppName from "./components/AppName";
+import Checker from "./components/Checker";
 function App() {
-  const Items = [
-    {
-    task:"Buy Milk",
-    deadline:"17/01/2025"
-  },
-  {
-    task:"Buy Fruits",
-    deadline:"17/01/2025"
-  },
-  {
-    task:"Complete Homework",
-    deadline:"17/01/2025"
-  },
-  {
-    task:"Finish React ",
-    deadline:"22/01/2025"
-  },
-  {
-    task:"Finish DSA",
-    deadline:"14/2/2025"
-  },
-];
+  let [Items, setItems] = useState([]);
+  const OnAddClick = (todoTask,dueDate) => {
+    const tempItem = [...Items,{ task:todoTask, deadline:dueDate}];
+    setItems(tempItem);
+  };
+  const handleDeleteItem=(item)=>{
+    // const tempItem=[...Items].filter(a=> a.task!==item.task)
+    tempItem.forEach((a,index)=>{
+      if(a.task===item.task && a.deadline===item.deadline)
+        tempItem.splice(index,1);
+    })
+    setItems(tempItem)
+  }
   return (
     <>
       <center className="todo-container">
         <AppName />
-        <AddTodo Tasks={Items}/>
+        <AddTodo
+          Tasks={Items}
+          onNewItem={OnAddClick}
+          onDeleteClick={handleDeleteItem}
+        />
+       {Items.length===0 &&<Checker />} 
       </center>
     </>
   );
 }
-
 export default App;

@@ -1,10 +1,10 @@
 import "./TodoItem.css"
-function TodoItem({todoTask,todoDate}){
+function TodoItem({todoTask,todoDate,handleDeleteClick}){
   return<>
   <div className="container">
   <div className="content" >{todoTask}</div>
   <div className="content">{todoDate}</div>
-  <button className="button">Delete</button>
+  <button onClick={handleDeleteClick} className="button">Delete</button>
   </div>
   </>
 }
