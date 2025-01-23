@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.calculator{
+  border: solid rgb(180, 176, 176) 1px;
+  margin-top: 5.8rem;
+  width: 20rem;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+}
+
