@@ -4,7 +4,6 @@ import TodoItem from "./TodoItem";
 function AddTodo({Tasks,onNewItem,onDeleteClick}){
 const [todoName,setToDoName]=useState("");
 const [dueDate,setDueDate]=useState("");
-const npOfUpdates =useRef();
 const taskHandler=(e)=>{
   setToDoName(e.target.value)
 }
