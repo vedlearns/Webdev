@@ -11,6 +11,7 @@ function App() {
   };
   const handleDeleteItem=(item)=>{
     // const tempItem=[...Items].filter(a=> a.task!==item.task)
+    const tempItem=[...Items]
     tempItem.forEach((a,index)=>{
       if(a.task===item.task && a.deadline===item.deadline)
         tempItem.splice(index,1);
