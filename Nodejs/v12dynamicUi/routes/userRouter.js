@@ -14,7 +14,7 @@ userRouter.use(express.static(path.join(rootDir,'public')));
 userRouter.get("/",(req,res,next)=>{
   console.log("2",req.url,req.method);
   console.log("Registered Homes ",registeredHouse);
-  res.sendFile(path.join(rootDir,'views','home.html'))
+  res.render('home',{title:'home'})
 })
 
 module.exports=userRouter

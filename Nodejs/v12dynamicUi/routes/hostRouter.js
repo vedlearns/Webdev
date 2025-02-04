@@ -12,12 +12,12 @@ hostRouter.use(express.static(path.join(rootDir,'public')));
 const registeredHouse=[];
 
 hostRouter.get("/add-home",(req,res,next)=>{
-  res.sendFile(path.join(rootDir,'views','addHome.html'))
+  res.render('addHome',{title:'addhome'})
 })
 hostRouter.post("/add-home",(req,res,next)=>{
   registeredHouse.push({houseName:req.body.houseName})
   console.log("Home Registration Successful",registeredHouse);
-  res.sendFile(path.join(rootDir,'views','homeAdded.html'))
+  res.render('homeAdded',{registeredHouse:registeredHouse,title:'air bnb'});        //{registeredHouse} means {registeredHouse:registeredHouse}  shortcut
 })
 
 exports.hostRouter=hostRouter;
