@@ -5,7 +5,9 @@ const PostList=()=>{
   const {postList}=useContext(PostListData)
   return(
     <>
+    <div className={`post-container flex flex-col m-auto `} >
     {postList.map((post)=>< Post key={post.id} post={post} />)}
+    </div>
     </>
   )
 }

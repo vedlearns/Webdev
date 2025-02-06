@@ -7,18 +7,43 @@ export const PostList=createContext({
 })
 
 const postListReducer=(currPostList,action)=>{
-return currPostList
+  let newPostList=currPostList
+  if(action.type==="ADD_ITEM")
+  {
+    newPostList=[action.payload,...currPostList]
+  }
+  else if(action.type==="DELETE_ITEM")
+  {
+    newPostList=currPostList.filter((item)=>item.id!==action.payload.postId)
+  }
+return newPostList
 }
 
 const PostListProvider=({children})=>{
 
   const[postList,dispatchPostList]=useReducer(postListReducer,DEFAULT_POST_LIST)
-
-  const addPost=()=>{
-    
+  const addPost=(obj)=>{
+    const addItemAction={
+      type:"ADD_ITEM",
+      payload:{
+        id:`${postList.length+1}`,
+        title:obj.title,
+        body:obj.body,
+        reactions:4,
+        userId:'user-40',
+        tags:['Vacations','Mumbai','Enjoying']
+      }
+    }
+    dispatchPostList(addItemAction);
   }
-  const deletePost=()=>{
-
+  const deletePost=(id)=>{
+    const deleteItemAction={
+      type:"DELETE_ITEM",
+      payload:{
+        postId:id
+      }
+    }
+    dispatchPostList(deleteItemAction);
   }
 
   return(
@@ -36,7 +61,7 @@ const DEFAULT_POST_LIST=[
   {
   id:'1',
   title:'Going to Mumbai',
-  body:'Going Mumbai for vacations.',
+  body:'vacations. ',
   reactions:'2',
   userId:'user-9',
   tags:['Vacations','Mumbai','Enjoying']

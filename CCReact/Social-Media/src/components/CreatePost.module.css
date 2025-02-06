@@ -1,0 +1,39 @@
+.container{
+  width: 20em;
+  border:solid rgb(156, 156, 156) 1px;
+  margin:auto;
+  min-height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: white;
+}
+input{
+  border:solid black 1px;
+  margin-left: 5px;
+  width: 80%;
+  padding: 2px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 2px rgb(255, 255, 255);
+  margin-block: 5px;
+}
+.title,.body, .buttonContainer{
+  display: flex;
+  flex-direction:row ;
+  margin-block: 10px;
+  justify-content: center;
+}
+.button{
+  border: solid rgb(132, 127, 127) 2px;
+  width: 6em;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 2px 2px 4px 2px rgb(255, 255, 255);
+  background-color: rgb(234, 31, 153);
+  text-align: center;
+}
+.button:hover{
+  cursor: pointer;
+}
