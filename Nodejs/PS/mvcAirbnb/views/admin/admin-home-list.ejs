@@ -1,0 +1,28 @@
+<%- include('../partials/head')%>
+</head>
+<body>
+<%- include('../partials/header') %>
+<div class="flex w-lvw mt-4 justify-center p-5 md:mt-6">
+  <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Item</a>
+  <a href="#" class="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-emerald-400 dark:text-white dark:border-gray-600 dark:hover:text-white dark:hover:bg-emerald-600">Delete Item</a>
+</div>
+<div class="w-screen  h-screen flex flex-row justify-center  ">
+  
+  <ul class="mt-10 flex flex-row flex-wrap">
+  <% registeredHomes.forEach(home=>{%>
+    <li class="m-5 min-w-2xs" >
+  <div class="w-full p-8 max-w-sm flex flex-col justify-center bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex flex-col items-center pb-10">
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"> <%= home.houseName%></h5>
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"> Price: <%= home.price%></h5>
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"> location: <%= home.location%></h5>
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">   Rating: <%= home.rating%></h5>
+    </div>
+    </div>
+  </li>
+  <%})%>
+  </ul>
+  </div>
+
+</body>
+</html>

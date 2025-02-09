@@ -2,9 +2,7 @@ import { useContext } from "react";
 import { RxCrossCircled } from "react-icons/rx";
 import { PostList } from "../store/Post-list-store";
 const Post=({post})=>{
-
  const {deletePost}=useContext(PostList)
-
   return(<>
 <div className="w-full my-1 max-w-svh bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
     <RxCrossCircled onClick={()=>deletePost(post.id)} className="cursor-pointer" color="white" style={{float:"right"}} size={20} />
@@ -34,7 +32,7 @@ const Post=({post})=>{
         </div>
         <div className="flex items-center justify-between">
             <span className="text-lg font-bold text-gray-900 dark:text-white"> {post.body}</span>
-            <span className="text-lg font-bold text-gray-900 dark:text-white">Reactions: {post.reactions}</span>
+            <span className="text-lg font-bold text-gray-900 dark:text-white">Likes: {post.reactions.likes } </span>
         </div>
     </div>
 </div>

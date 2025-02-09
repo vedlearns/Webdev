@@ -1,0 +1,22 @@
+<%- include('../partials/head')%>
+</head>
+<body>
+<%- include('../partials/header') %>
+<div class="w-screen  h-screen flex flex-row justify-center  ">
+  <ul class="mt-10 flex flex-row flex-wrap">
+  <% registeredHouse.forEach(home=>{%>
+    <li class="m-5 min-w-2xs" >
+  <div class="w-full p-8 max-w-sm flex flex-col justify-center bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <div class="flex flex-col items-center pb-10">
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"> <%= home.houseName%></h5>
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"> Price: <%= home.price%></h5>
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white"> location: <%= home.location%></h5>
+      <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">   Rating: <%= home.rating%></h5>
+    </div>
+    </div>
+  </li>
+  <%})%>
+  </ul>
+  </div>
+</body>
+</html>
