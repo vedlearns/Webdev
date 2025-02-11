@@ -31,7 +31,7 @@ const PostListProvider=({children})=>{
     const addItemAction={
       type:"ADD_ITEM",
       payload:{
-        id:`${postList.length+1}`,
+        id:`${postList.length+2}`,
         title:obj.title,
         body:obj.body,
         reactions:4,
