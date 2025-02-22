@@ -1,4 +1,4 @@
-import {  createContext, useReducer } from "react";
+import {  createContext, useCallback, useReducer } from "react";
 
 export const PostList=createContext({
   postList:[],
@@ -6,6 +6,8 @@ export const PostList=createContext({
   addPost:()=>{},
   deletePost:()=>{}
 })
+
+const DEFAULT_POST_LIST=[];
 
 const postListReducer=(currPostList,action)=>{
   let newPostList=currPostList
@@ -21,7 +23,7 @@ const postListReducer=(currPostList,action)=>{
   {
     newPostList=currPostList.filter((item)=>item.id!==action.payload.postId)
   }
-return newPostList
+return [...newPostList]
 }
 
 const PostListProvider=({children})=>{
@@ -31,7 +33,7 @@ const PostListProvider=({children})=>{
     const addItemAction={
       type:"ADD_ITEM",
       payload:{
-        id:`${postList.length+2}`,
+        id:Date.now(),
         title:obj.title,
         body:obj.body,
         reactions:4,
@@ -50,7 +52,7 @@ const PostListProvider=({children})=>{
     }
     dispatchPostList(addItemAction);
   }
-  const deletePost=(id)=>{
+  const deletePost=useCallback((id)=>{
     const deleteItemAction={
       type:"DELETE_ITEM",
       payload:{
@@ -58,7 +60,7 @@ const PostListProvider=({children})=>{
       }
     }
     dispatchPostList(deleteItemAction);
-  }
+  },[dispatchPostList])
 
   return(
   <PostList.Provider value={{
@@ -72,31 +74,5 @@ const PostListProvider=({children})=>{
   )
 }
 
-const DEFAULT_POST_LIST=[
-  // {
-//   id:'1',
-//   title:'Going to Mumbai',
-//   body:'vacations. ',
-//   reactions:'2',
-//   userId:'user-9',
-//   tags:['Vacations','Mumbai','Enjoying']
-// },
-//   {
-//   id:'2',
-//   title:'UG Done',
-//   body:'Now Grad',
-//   reactions:'3',
-//   userId:'user-12',
-//   tags:['Graduation','BTech','Enjoying']
-// },
-//   {
-//   id:'3',
-//   title:'Learning React',
-//   body:'React reacting',
-//   reactions:'4',
-//   userId:'user-40',
-//   tags:['React','Learn','WebDev']
-// }
-]
 
 export default PostListProvider;

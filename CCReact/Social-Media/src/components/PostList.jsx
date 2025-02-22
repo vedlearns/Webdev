@@ -9,6 +9,7 @@ const PostList = () => {
   const [fetching, setFetching] = useState(false);
 
   useEffect(() => {
+    if(postList.length>0) return;     // restricting unnecessary api calls
     setFetching(true);
     const controller = new AbortController();
     const signal = controller.signal;
