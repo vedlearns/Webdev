@@ -1,0 +1,45 @@
+<%- include('partials/head')%>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <%- include('partials/header')%>
+  <header class="bg-white shadow-md py-6 px-8 text-center">
+    <h1 class="text-3xl font-semibold">Register Your Home Here</h1>
+  </header>
+  <main class="flex justify-center items-center mt-10">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+      <form action="/host/add-home" method="POST" class="space-y-4">
+        <input
+          type="text"
+          name="houseName"
+          placeholder="Enter the name of your House"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+        />
+        <input
+          type="text"
+          name="price"
+          placeholder="Price per Night"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+        />
+        <input
+          type="text"
+          name="location"
+          placeholder="Location"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+        />
+        <input
+          type="text"
+          name="rating"
+          placeholder="Rating"
+          class="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+        />
+        <button type="submit" class="w-full bg-red-500 text-white py-3 rounded-md text-lg font-semibold hover:bg-red-600">
+          Submit
+        </button>
+      </form>
+      <div class="text-center mt-4">
+        <a href="/host/add-home" class="text-red-500 hover:underline">Add Home</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
