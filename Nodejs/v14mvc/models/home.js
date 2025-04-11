@@ -18,6 +18,7 @@ class Home{
   }
   save()
   {
+    this.id=Math.random().toString();
     Home.fetchAll((registeredHouse)=>{registeredHouse.push(this);
 
       fs.writeFile(homeDataPath,JSON.stringify(registeredHouse),err=>console.log("File Writing Concluded ",err))
@@ -31,9 +32,19 @@ class Home{
       //  return callback(JSON.parse(data));
       // }
       // callback([])
-      callback(!err?JSON.parse(data):[]);
+      callback(!err?JSON.parse(data):[]); 
     })
   }
+
+  static findById(homeId,callback)
+  {
+    this.fetchAll(homes=>{
+      const homeFound=homes.find(home=>home.id===homeId);
+      callback(homeFound);
+    })
+
+  }
+
 }
 
 module.exports={Home};
