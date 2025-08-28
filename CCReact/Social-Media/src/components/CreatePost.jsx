@@ -1,4 +1,4 @@
-import { useRef ,useContext } from 'react';
+ import { useRef ,useContext } from 'react';
 import styles from './CreatePost.module.css'
 import {PostList as PostListContext }from "../store/Post-list-store"
 const CreatePost = () => {
@@ -11,9 +11,22 @@ const CreatePost = () => {
     title:titleElement.current.value,
     body:bodyElement.current.value
   }
+  fetch('https://dummyjson.com/posts/add', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    title: 'I am in love with someone.',
+    body:"this is body",
+    reactions:4,
+    userId:5,
+  })
+})
+.then(res => res.json())
+.then(data=>addPost(data))
+
+
   bodyElement.current.value="";
   titleElement.current.value="";
-    addPost(data)
   }
   return (
     <>
