@@ -1,10 +1,7 @@
 import { MdAddToPhotos } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
-const Sidebar = ({ selectedTab, setSelectedTab }) => {
-  const handleOnClick = (e) => {
-    setSelectedTab(e.target.textContent)
-  };
-
+import { Link } from "react-router-dom";
+const Sidebar = () => {
   return (
     <>
       <div className="relative flex h-[calc(100vh-20rem)] w-full max-w-[20rem] flex-col rounded-xl dark:bg-gray-800 bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5 sidebar">
@@ -14,36 +11,27 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
           </h5>
         </div>
         <nav className="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
-          <div
-            role="button"
-            onClick={handleOnClick}
-            className={`cursor-pointer flex items-center w-full text-white  p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 ${
-              selectedTab === "Home" && "bg-blue-500"
-            }`}
+          <Link
+            to="/"
+            className="cursor-pointer flex items-center w-full text-white  p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 "
           >
             <div className="grid mr-4 place-items-center">
               <IoHome />
             </div>
             Home
-          </div>
-          <div
-            role="button"
-            onClick={handleOnClick}
-            className={`flex items-center cursor-pointer text-white w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 ${
-              selectedTab === "Post" && "bg-blue-500"
-            }`}
+          </Link>
+          <Link
+            to="/create-post"
+            className="cursor-pointer flex items-center w-full text-white  p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 "
           >
             <div className="grid mr-4 place-items-center">
               <MdAddToPhotos />
             </div>
             Post
-          </div>
-          <div
-            role="button"
-            onClick={handleOnClick}
-            className={`flex items-center cursor-pointer text-white w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 ${
-              selectedTab === "Inbox" && "bg-blue-500"
-            }`}
+          </Link>
+          <Link
+            to="/inbox"
+            className="cursor-pointer flex items-center w-full text-white  p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 "
           >
             <div className="grid mr-4 place-items-center">
               <svg
@@ -61,14 +49,10 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
               </svg>
             </div>
             Inbox
-            
-          </div>
-          <div
-            role="button"
-            onClick={handleOnClick}
-            className={`flex items-center cursor-pointer text-white w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 ${
-              selectedTab === "Profile" && "bg-blue-500"
-            }`}
+          </Link>
+          <Link
+            to="/profile"
+            className="cursor-pointer flex items-center w-full text-white  p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 "
           >
             <div className="grid mr-4 place-items-center">
               <svg
@@ -86,13 +70,10 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
               </svg>
             </div>
             Profile
-          </div>
-          <div
-            role="button"
-            onClick={handleOnClick}
-            className={`flex cursor-pointer text-white items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 ${
-              selectedTab === "Settings" && "bg-blue-500"
-            }`}
+          </Link>
+          <Link
+            to="/settings"
+            className="cursor-pointer flex items-center w-full text-white  p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 "
           >
             <div className="grid mr-4 place-items-center">
               <svg
@@ -108,15 +89,12 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </div> 
+            </div>
             Settings
-          </div>
-          <div
-            role="button"
-            onClick={handleOnClick}
-            className={`flex cursor-pointer text-white items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 ${
-              selectedTab === "Log Out" && "bg-blue-500"
-            }`}
+          </Link>
+          <Link
+            to="/logout"
+            className="cursor-pointer flex items-center w-full text-white  p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900 "
           >
             <div className="grid mr-4 place-items-center">
               <svg
@@ -134,7 +112,7 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
               </svg>
             </div>
             Log Out
-          </div>
+          </Link>
         </nav>
       </div>
     </>

@@ -1,10 +1,13 @@
  import { useRef ,useContext } from 'react';
 import styles from './CreatePost.module.css'
 import {PostList as PostListContext }from "../store/Post-list-store"
+import { useNavigate } from 'react-router-dom';
 const CreatePost = () => {
   const {addPost}=useContext(PostListContext);
   const titleElement=useRef();
   const bodyElement=useRef();
+  const navigate=useNavigate();
+
   const handleAddPost=(e)=>{
     e.preventDefault();
   const data={
@@ -22,11 +25,10 @@ const CreatePost = () => {
   })
 })
 .then(res => res.json())
-.then(data=>addPost(data))
-
-
+.then(data=>(addPost(data),console.log(data),navigate("/")))
   bodyElement.current.value="";
   titleElement.current.value="";
+   
   }
   return (
     <>
