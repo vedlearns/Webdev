@@ -1,27 +1,37 @@
-import { useContext, useEffect, useState } from "react";
 import Post from "./Post";
-import { PostList as PostListData } from "../store/Post-list-store";
 import WelcomeMsg from "./WelcomeMsg";
-import LoadingSpinner from "./LoadingSpinner";
+import { useLoaderData } from "react-router-dom";
 
 const PostList = () => {
-  const { postList, fetching, addInitialPosts } = useContext(PostListData);
+  // const { postList, addInitialPosts } = useContext(PostListData);
 
+  const postList=useLoaderData()
 
   return (
     <>
-      {fetching && <LoadingSpinner />}
-      {!fetching && postList.length == 0 ? (
+      {postList.length == 0 ? (
         <WelcomeMsg />
       ) : (
         <div className={`post-container flex flex-col m-auto `}>
-          {postList.map((post) => (
+          {postList.map((post) => ( 
             <Post key={post.id} post={post} />
           ))}
-        </div>
+        </div> 
       )}
     </>
   );
 };
+
+
+export const postLoader=()=>{
+return fetch("https://dummyjson.com/posts")
+      .then((res) => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.json();
+      })
+      .then((data) => {
+          return(data.posts);
+      })
+}
 
 export default PostList;
